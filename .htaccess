@@ -1,0 +1,10 @@
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "POST, GET, OPTIONS, DELETE, PUT"
+AddDefaultCharset utf-8
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+#RewriteRule ^([a-z]+)/?$ $1.php [NC]
+</IfModule>
